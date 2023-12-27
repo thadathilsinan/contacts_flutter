@@ -58,6 +58,14 @@ class ViewContactPage extends ConsumerWidget {
                 backgroundImage: contact.image != null
                     ? FileImage(File(contact.image!))
                     : null,
+                child: contact.image == null
+                    ? Text(
+                        contact.name[0].toUpperCase(),
+                        style: const TextStyle(
+                          fontSize: 36,
+                        ),
+                      )
+                    : null,
               ),
             ),
             const SizedBox(height: 36),

@@ -68,6 +68,9 @@ class HomePage extends ConsumerWidget {
                 backgroundImage: contact.image != null
                     ? FileImage(File(contact.image!))
                     : null,
+                child: contact.image == null
+                    ? Text(contact.name[0].toUpperCase())
+                    : null,
               ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
