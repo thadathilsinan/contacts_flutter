@@ -4,6 +4,7 @@ import 'package:contacts/controller/contact_provider.dart';
 import 'package:contacts/models/contact_model.dart';
 import 'package:contacts/utils/snackbar_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -151,6 +152,7 @@ class _AddContactsPageState extends ConsumerState<AddContactsPage> {
                 decoration: const InputDecoration(
                   hintText: 'Phone',
                 ),
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.phone,
               ),
               TextFormField(
